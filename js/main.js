@@ -45,6 +45,7 @@ const hideSlide = () => {
 const showSlide = (i = 0) => {
    slides[i].style.opacity = 1
    slides[i].classList.add('active_slide')
+  setBGImage(slides[i]);
 }
 
 hideSlide()
@@ -77,12 +78,17 @@ prev.onclick = () => {
 autoSlider(index)
 
 
-let slider = document.querySelector('.slider');
-const slideName = document.querySelector('#slideName');
-const name = slideName.textContent;
-if (name === "Ronnie Coleman") {
-//  slider.style.backgroundImage = 'url("https://image-cdn.essentiallysports.com/wp-content/uploads/The-Return-Of-Ronnie-Coleman-e1629482368536-740x428.jpg")';
-  slider.style.backgroundImage = ../david-goggins-running-6bdafqftq9t15mpa.jpg;
-} else if (name === "David Goggins") {
-  slider.style.backgroundImage = 'url("")';
+function setBGImage(slide) {
+  let sliderForImage = document.querySelector('.slider');
+  var slideName = slide.querySelector('#slideName');
+  var name = slideName.textContent;
+  if (name === "Ronnie Coleman") {
+    sliderForImage.style.backgroundImage = 'url("https://img.mensxp.com/media/content/2018/Dec/the-king-ronnie-colemans-2018-documentary-is-quite-painful-to-watch-amp-yet-its-inspiring-740x500-1-1545125574.jpg")';
+  } else if (name === "David Goggins") {
+    sliderForImage.style.backgroundImage = 'url("https://i.redd.it/egenc13n74lb1.jpg")';
+  } else if (name === "Mike Mentzer") {
+    sliderForImage.style.backgroundImage = 'url("https://www.ironmanmagazine.com/wp-content/uploads/Mike-Mentzers-Heavy-Duty-Workout-and-Diet-Plan.png")';
+  } else if (name === "Lex Fridman") {
+    sliderForImage.style.backgroundImage = 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDx2PSKXWtAVA047IUWsfcywZK6iJOHMA7zg&usqp=CAU")';
+  }
 }
