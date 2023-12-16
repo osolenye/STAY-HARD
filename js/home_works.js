@@ -1,45 +1,4 @@
 window.onload = function () {
-    const parentBlock = document.querySelector('.parent_block');
-    const childBlock = document.querySelector('.child_block');
-
-    let posX = 0;
-    let posY = 0;
-
-    const parentWidth = parentBlock.offsetWidth;
-    const parentHeight = parentBlock.offsetHeight;
-
-
-    function moveRight() {
-        const interval = setInterval(() => {
-            if (posX >= parentWidth - childBlock.offsetWidth) {
-                clearInterval(interval);
-                moveDown();
-            } else {
-                posX += 1;
-                childBlock.style.left = posX + 'px';
-            }
-        }, 10);
-    }
-
-
-    function moveDown() {
-        const interval = setInterval(() => {
-            if (posY >= parentHeight - childBlock.offsetHeight) {
-                clearInterval(interval);
-            } else {
-                posY += 1;
-                childBlock.style.top = posY + 'px';
-            }
-        }, 10);
-    }
-
-    childBlock.style.left = posX + 'px';
-    childBlock.style.top = posY + 'px';
-
-    setTimeout(() => {
-        moveRight();
-    }, 1000);
-
     const gmailInput = document.getElementById('gmail_input');
     const gmailButton = document.getElementById('gmail_button');
     const gmailResult = document.getElementById('gmail_result');
@@ -110,3 +69,46 @@ window.onload = function () {
     btnReset.addEventListener('click', resetTimer);
 };
   
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const parentBlock = document.querySelector('.parent_block');
+    const childBlock = document.querySelector('.child_block');
+
+    let posX = Math.floor(Math.random() * (parentBlock.offsetWidth - childBlock.offsetWidth));
+    let posY = Math.floor(Math.random() * (parentBlock.offsetHeight - childBlock.offsetHeight));
+    let speedX = 2;
+    let speedY = 2;
+
+    function moveSquare() {
+        const interval = setInterval(() => {
+            if (posX >= parentBlock.offsetWidth - childBlock.offsetWidth || posX <= 0) {
+                speedX = -speedX;
+                changeColor();
+            }
+            if (posY >= parentBlock.offsetHeight - childBlock.offsetHeight || posY <= 0) {
+                speedY = -speedY;
+                changeColor();
+            }
+
+            posX += speedX;
+            posY += speedY;
+
+            childBlock.style.left = posX + 'px';
+            childBlock.style.top = posY + 'px';
+        }, 10);
+    }
+
+    function changeColor() {
+        const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        childBlock.style.backgroundColor = randomColor;
+    }
+
+    moveSquare();
+});
+
