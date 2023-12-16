@@ -43,8 +43,8 @@ const hideSlide = () => {
     })
 }
 const showSlide = (i = 0) => {
-    slides[i].style.opacity = 1
-    slides[i].classList.add('active_slide')
+   slides[i].style.opacity = 1
+   slides[i].classList.add('active_slide')
 }
 
 hideSlide()
@@ -75,3 +75,14 @@ prev.onclick = () => {
 }
 
 autoSlider(index)
+
+
+let slider = document.querySelector('.slider');
+const slideName = document.querySelector('#slideName');
+const name = slideName.textContent;
+if (name === "Ronnie Coleman") {
+//  slider.style.backgroundImage = 'url("https://image-cdn.essentiallysports.com/wp-content/uploads/The-Return-Of-Ronnie-Coleman-e1629482368536-740x428.jpg")';
+  slider.style.backgroundImage = ../david-goggins-running-6bdafqftq9t15mpa.jpg;
+} else if (name === "David Goggins") {
+  slider.style.backgroundImage = 'url("")';
+}
