@@ -35,7 +35,7 @@
 }
 
 .tab_content_block {
-    width: 700px;
+    width: 800px;
     border: 1px solid var(--orange);
     padding: 20px;
     border-radius: 10px;
@@ -45,6 +45,7 @@
     flex-direction: column;
     justify-content: center;
     height: 170px;
+
 }
 
 .tab_content_block p {
@@ -85,7 +86,6 @@
     align-items: center;
     margin-top: 50px;
 }
-
 /*------CARD SWITCHER------*/
 
 .card_switcher {

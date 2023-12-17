@@ -82,47 +82,158 @@ function convertFromEur(eur) {
 
 
 
-const slides = document.querySelectorAll('.slide')
-const next = document.querySelector('#btn-next')
-const prev = document.querySelector('#btn-prev')
-let index = 0
+const tabsContentCards = document.querySelectorAll('.tab_content_block')
+const tabsItems = document.querySelectorAll('.tab_content_item')
+const tabsItemsParents = document.querySelector('.tab_content_items')
 
-const hideSlide = () => {
-    slides.forEach((slide) => {
-        slide.style.opacity = 0
-        slide.classList.remove('active_slide')
+const hightTabsContentCards = () => {
+    tabsContentCards.forEach((tabContentCard) => {
+        tabContentCard.style.display = 'none'
+    })
+    tabsItems.forEach((tabItem) => {
+        tabItem.classList.remove('tab_content_item_active')
     })
 }
-const showSlide = (i = 0) => {
-    slides[i].style.opacity = 1
-    slides[i].classList.add('active_slide')
+
+const showTabsContentCards = (indexElement = 0) => {
+    tabsContentCards[indexElement].style.display = 'block'
+    tabsItems[indexElement].classList.add('tab_content_item_active')
 }
 
-hideSlide()
-showSlide(index)
+hightTabsContentCards()
+showTabsContentCards()
+
+tabsItemsParents.onclick = (event) => {
+    if (event.target.classList.contains('tab_content_item')) {
+        tabsItems.forEach((tabItem, tabItemIndex) => {
+            if (event.target === tabItem) {
+                hightTabsContentCards()
+                showTabsContentCards(tabItemIndex)
+            }
+        })
+    }
+}
+
+let currentIndex = 0; 
+let intervalId; 
+
+const startAutoSlider = () => {
+    intervalId = setInterval(() => {
+        hightTabsContentCards();
+        showTabsContentCards(currentIndex);
+        currentIndex = (currentIndex + 1) % tabsItems.length; 
+    }, 3000); 
+};
+
+startAutoSlider();
+
+tabsItemsParents.onclick = (event) => {
+    clearInterval(intervalId); 
+    if (event.target.classList.contains('tab_content_item')) {
+        tabsItems.forEach((tabItem, tabItemIndex) => {
+            if (event.target === tabItem) {
+                hightTabsContentCards();
+                showTabsContentCards(tabItemIndex);
+                currentIndex = tabItemIndex; 
+                startAutoSlider(); 
+            }
+        });
+    }
+};
 
 
-const autoSlider = (i = 0) => {
-    setInterval(() => {
-        i++
-        if (i > slides.length - 1) {
-            i = 0
+
+
+const cityNameInput = document.querySelector('.cityName'),
+    city = document.querySelector('.city'),
+    temp = document.querySelector('.temp')
+
+const WEATHER_API = 'http://api.openweathermap.org/data/2.5/weather'
+const API_KEY = 'e417df62e04d3b1b111abeab19cea714'
+
+cityNameInput.oninput = async (event) => {
+    try {
+        const response = await fetch(`${WEATHER_API}?q=${event.target.value}&appid=${API_KEY}`)
+        const data = await response.json()
+        city.innerHTML = data.name ? data.name : 'Город не найден...'
+        temp.innerHTML = data?.main?.temp ? Math.round(data?.main?.temp - 273) + "&deg;C" : '...'
+    } catch (e){
+        console.log(e)
+    }
+
+}
+
+
+
+
+
+
+//
+const card = document.querySelector('.card');
+const btnPrev = document.querySelector('#btn-prev');
+const btnNext = document.querySelector('#btn-next');
+
+let count = 1;
+const totalCards = 200;
+
+// Функция для получения данных о карточке
+// Функция для получения данных о карточке
+async function getCardData(cardNumber) {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${cardNumber}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
         }
-        hideSlide()
-        showSlide(i)
-    }, 10000)
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return null;
+    }
 }
 
-next.onclick = () => {
-    index < slides.length - 1 ? index++ : index = 0
-    hideSlide()
-    showSlide(index)
+// Функция обновления карточки с данными
+function updateCard(cardData) {
+    card.innerHTML = `
+        <p>${cardData.title}</p>
+        <p style="color: ${cardData.completed ? 'green' : 'yellow'}">${cardData.completed}</p>
+        <span>${cardData.id}</span>
+    `;
 }
 
-prev.onclick = () => {
-    index > 0 ? index-- : index = slides.length - 1
-    hideSlide()
-    showSlide(index)
+// Функция обработки кнопки Prev
+async function showPrevCard() {
+    count = (count === 1) ? totalCards : count - 1;
+    const data = await getCardData(count);
+    if (data) {
+        updateCard(data);
+    }
 }
 
-autoSlider(index)
+// Функция обработки кнопки Next
+async function showNextCard() {
+    count = (count === totalCards) ? 1 : count + 1;
+    const data = await getCardData(count);
+    if (data) {
+        updateCard(data);
+    }
+}
+
+// Показать первую карточку при загрузке страницы
+window.addEventListener('DOMContentLoaded', async () => {
+    const initialCardData = await getCardData(count);
+    if (initialCardData) {
+        updateCard(initialCardData);
+    }
+});
+
+
+// Обработчики событий для кнопок prev и next
+btnPrev.addEventListener('click', showPrevCard);
+btnNext.addEventListener('click', showNextCard);
+
+
+//HomeWork 6.2
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Ошибка при запросе:', error));
