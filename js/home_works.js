@@ -21,15 +21,15 @@ window.onload = function () {
 
 
     const btnStart = document.getElementById("start");
-    const btnStop= document.getElementById("stop");
-    const btnReset= document.getElementById("reset");
+    const btnStop = document.getElementById("stop");
+    const btnReset = document.getElementById("reset");
 
     const divMlSeconds = document.getElementById("ml-secondsS");
-    const divSeconds= document.getElementById("secondsS");
+    const divSeconds = document.getElementById("secondsS");
 
 
     var mlSeconds = 0;
-    var seconds= 0;
+    var seconds = 0;
 
 
     let timer = null;
@@ -68,14 +68,14 @@ window.onload = function () {
     btnStop.addEventListener('click', stopTimer);
     btnReset.addEventListener('click', resetTimer);
 };
-  
 
 
 
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
     const parentBlock = document.querySelector('.parent_block');
     const childBlock = document.querySelector('.child_block');
 

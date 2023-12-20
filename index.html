@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Discipline</title>
@@ -7,141 +8,160 @@
     <link rel="stylesheet" href="css/core.css">
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-<div class="wrapper">
-    <div class="header">
-        <div class="container">
-            <div class="inner_header">
-                <a href="index.html">
-                    <div class="logotype">
-                        <h2>STAYHARD</h2>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="inner_header">
+                    <a href="index.html">
+                        <div class="logotype">
+                            <h2>STAYHARD</h2>
+                        </div>
+                    </a>
+                    <ul class="menu">
+                        <li class="menu_link">
+                            <a href="pages/home_works.html">Home Works</a>
+                        </li>
+                        <li class="menu_link">
+                            <a href="pages/lessons.html">Lessons</a>
+                        </li>
+                        <li class="menu_link">
+                            <a href="pages/cards.html">Cards</a>
+                        </li>
+                    </ul>
+                    <button class="btn" id="btn-get">Click me!</button>
+                    <script>
+                        function redirectToGame() {
+                            window.location.href = 'D:\\program\\pages\\game.html';
+                        }
+
+                        const buttonClickMe = document.getElementById("btn-get");
+                        buttonClickMe.addEventListener('click', redirectToGame);
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="main_block">
+            <div class="container">
+                <div class="inner_main">
+                    <h1><strong id="js-color">Yeah buddy</strong> - это слова, которые сделают из тебя мужчину.</h1>
+                    <div class="colors-buttons">
+                        <button class="btn btn-color"></button>
+                        <button class="btn btn-color"></button>
+                        <button class="btn btn-color"></button>
+                        <button class="btn btn-color"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider_block">
+            <div class="container">
+                <div class="inner_slider">
+                    <div class="slider">
+                        <button class="btn-slide" id="prev">&lt;prev</button>
+                        <div class="slide active_slide">
+                            <div class="slide_card">
+                                <h3 id="slideName">Ronnie Coleman</h3>
+                                <p>Рональд Дин Коулмэн — профессиональный культурист, восьмикратный победитель конкурса
+                                    «Мистер Олимпия» и других престижных соревнований. У чувака вес 135 кг сухих мышц!
+                                </p>
+                                <a href="https://www.youtube.com/watch?v=nUpi06LpVp0" target="_blank">lightweight baby:
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide_card">
+                                <h3 id="slideName">David Goggins</h3>
+                                <p>Лютейший демонюга. Дэвид Гоггинс — американский сверхмарафонец, ветеран спецназа
+                                    морского флота SEAL. Участник боевых действий в Афганистане и Ираке. Получил
+                                    известность после издания книги Джесси Ицлера «Living with a SEAL: 31 Days Training
+                                    with the Toughest Man on the Planet», в которой выступил главным героем.</p>
+                                <a href="https://www.youtube.com/watch?v=BM-Yf-DXhMM" target="_blank">They don't know me
+                                    son!</a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide_card">
+                                <h3 id="slideName">Mike Mentzer</h3>
+                                <p>Майк Ментцер — американский бодибилдер. В 1979 г. Ментцер занял второе, а в 1980 г. —
+                                    пятое место в важнейшем чемпионате по бодибилдингу — «Мистер Олимпия». После
+                                    соревнований в 1980 году Ментцер оставил спортивную карьеру. </p>
+                                <a href="https://www.youtube.com/watch?v=c52zWyNPfLY" target="_blank">train the fuck
+                                    out</a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide_card">
+                                <h3 id="slideName">Lex Fridman</h3>
+                                <p>Лекс Фридман -американско-российский ученый, интервьюер и блогер еврейского
+                                    происхождения. Область его научных исследований- компьютерные технологии и
+                                    искусственный интеллект. Среди его гостей на YouTube канале- Илон Маск, Джордан
+                                    Питерсон, Виталий Бутерин, Оливер Стоун и другие.</p>
+                                <a href="https://www.youtube.com/watch?v=O7GegfDdbF4" target="_blank">Lex Lutor: </a>
+                            </div>
+                        </div>
+                        <button class="btn-slide" id="next">next&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="botlle">
+            <div class="container">
+                <div class="bottle_inner">
+                    <a href="pages/game.html">
+                        <div class="bowl">
+                            <div class="shadow"></div>
+                            <div class="liquid"></div>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="block_video">
+            <div class="container">
+                <h3>They don't know me son!</h3>
+                <div class="inner_block_video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kKPOfrxpcZ8?si=a5BX5yf4tbA5tDcm"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <a href="#" target="_blank">
+                    <div class="inner_footer">
+                        <h2>Made by Inai</h2>
                     </div>
                 </a>
-                <ul class="menu">
-                    <li class="menu_link">
-                        <a href="pages/home_works.html">Home Works</a>
-                    </li>
-                    <li class="menu_link">
-                        <a href="pages/lessons.html">Lessons</a>
-                    </li>
-                    <li class="menu_link">
-                        <a href="pages/cards.html">Cards</a>
-                    </li>
-                </ul>
-                <button class="btn" id="btn-get">Click me!</button>
-                <script>
-                    function redirectToGame() {
-                        window.location.href = 'D:\\program\\pages\\game.html';
-                    }
-
-                    const buttonClickMe = document.getElementById("btn-get");
-                    buttonClickMe.addEventListener('click', redirectToGame);
-                </script>
-            </div>
-        </div>
-    </div>
-    <div class="main_block">
-        <div class="container">
-            <div class="inner_main">
-                <h1><strong id="js-color">Yeah buddy</strong> - это слова, которые сделают из тебя мужчину.</h1>
-                <div class="colors-buttons">
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slider_block">
-        <div class="container">
-            <div class="inner_slider">
-                <div class="slider">
-                    <button class="btn-slide" id="prev">&lt;prev</button>
-                    <div class="slide active_slide">
-                        <div class="slide_card">
-                            <h3 id="slideName">Ronnie Coleman</h3>
-                            <p>Рональд Дин Коулмэн — профессиональный культурист, восьмикратный победитель конкурса «Мистер Олимпия» и других престижных соревнований. У чувака вес 135 кг сухих мышц!</p>
-                            <a href="https://www.youtube.com/watch?v=nUpi06LpVp0" target="_blank">lightweight baby: </a>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="slide_card">
-                            <h3 id="slideName">David Goggins</h3>
-                            <p>Лютейший демонюга. Дэвид Гоггинс — американский сверхмарафонец, ветеран спецназа морского флота SEAL. Участник боевых действий в Афганистане и Ираке. Получил известность после издания книги Джесси Ицлера «Living with a SEAL: 31 Days Training with the Toughest Man on the Planet», в которой выступил главным героем.</p>
-                            <a href="https://www.youtube.com/watch?v=BM-Yf-DXhMM" target="_blank">They don't know me son!</a>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="slide_card">
-                            <h3 id="slideName">Mike Mentzer</h3>
-                            <p>Майк Ментцер — американский бодибилдер. В 1979 г. Ментцер занял второе, а в 1980 г. — пятое место в важнейшем чемпионате по бодибилдингу — «Мистер Олимпия». После соревнований в 1980 году Ментцер оставил спортивную карьеру. </p>
-                            <a href="https://www.youtube.com/watch?v=c52zWyNPfLY" target="_blank">train the fuck out</a>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="slide_card">
-                            <h3 id="slideName">Lex Fridman</h3>
-                            <p>Лекс Фридман -американско-российский ученый, интервьюер и блогер еврейского происхождения. Область его научных исследований- компьютерные технологии и искусственный интеллект. Среди его гостей на YouTube канале- Илон Маск, Джордан Питерсон, Виталий Бутерин, Оливер Стоун и другие.</p>
-                            <a href="https://www.youtube.com/watch?v=O7GegfDdbF4" target="_blank">Lex Lutor: </a>
-                        </div>
-                    </div>
-                    <button class="btn-slide" id="next">next&gt;</button>
-                </div>
             </div>
         </div>
     </div>
 
-    <div class="botlle">
-        <div class="container">
-            <div class="bottle_inner">
-                <a href="pages/game.html">
-                    <div class="bowl">
-                        <div class="shadow"></div>
-                        <div class="liquid"></div>
-
-                    </div>
-                </a>
+    <div class="modal">
+        <div class="modal_dialog">
+            <div class="modal_content">
+                <form action="#">
+                    <div class="modal_close">&times;</div>
+                    <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
+                    <input required placeholder="Ваше имя" name="fullname" type="text" class="modal_input">
+                    <input required placeholder="Ваш номер телефона" name="phone_number" type="phone"
+                        class="modal_input">
+                    <button class="btn btn_dark btn_min">Перезвонить мне</button>
+                </form>
             </div>
         </div>
     </div>
-
-   <div class="block_video">
-        <div class="container">
-            <h3>They don't know me son!</h3>
-            <div class="inner_block_video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kKPOfrxpcZ8?si=a5BX5yf4tbA5tDcm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="container">
-            <a href="#" target="_blank">
-                <div class="inner_footer">
-                    <h2>Made by Inai</h2>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="modal">
-    <div class="modal_dialog">
-        <div class="modal_content">
-            <form action="#">
-                <div class="modal_close">&times;</div>
-                <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
-                <input required placeholder="Ваше имя" name="fullname" type="text" class="modal_input">
-                <input required placeholder="Ваш номер телефона" name="phone_number" type="phone" class="modal_input">
-                <button class="btn btn_dark btn_min">Перезвонить мне</button>
-            </form>
-        </div>
-    </div>
-</div>
 
 </body>
 <script src="js/main.js"></script>
 <script src="js/modal.js"></script>
+
 </html>

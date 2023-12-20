@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -43,6 +43,61 @@
       </div>
     
       <canvas id="my-canvas"></canvas>
+    </div>
+
+    <script src="../js/game.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/game.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  </head>
+
+  <body>
+    <div id="score" class="score">
+      <div class="title">SCORE</div>
+      <div class="num">0</div>
+    </div>
+    <div class="popup-container">
+      <div id="start" class="popup active">
+        <div class="title">HELLO !</div>
+        <div class="info">
+          <ul>
+            <li>LEFT CLICK TO SHOOT MARBLE</li>
+            <li>PRESS "SPACE" TO SWITCH THE MARBLE COLOR</li>
+            <li>PRESS "ESC" TO STOP</li>
+          </ul>
+        </div>
+        <div class="button-container">
+          <div class="button">START</div>
+        </div>
+      </div>
+      <div id="stop" class="popup">
+        <div class="title">HELLO !</div>
+        <div class="info">
+          YOOOOU JUSSSSSST NEED A BRRRRRRREAK !
+        </div>
+        <div class="button-container">
+          <div id="start-btn" class="button">START</div>
+          <div id="reset-btn" class="button button-2">RESTART</div>
+        </div>
+      </div>
+      <div id="final" class="popup">
+        <div class="title">HELLO !</div>
+        <div class="info">
+          YOU GOT <span class="num"></span> SCORES !
+        </div>
+        <div class="button-container">
+          <div class="button">RESTART</div>
+        </div>
+      </div>
+      <div class="mask"></div>
     </div>
 
     <script src="../js/game.js"></script>
