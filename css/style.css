@@ -2,7 +2,7 @@
 
 .header {
     height: 80px;
-    background: #2c2d2f;
+    background: #222E50;
     display: flex;
     align-items: center;
     width: 100%;
@@ -27,11 +27,15 @@
     font-size: 22px;
     height: 60px;
     width: fit-content;
-    background: var(--orange);
+    /*background: var(--orange); */
     padding: 8px;
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    background-image: url('../yeah-budy-ronnie-coleman.gif');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
 }
 
 /* HEADER MENU */
@@ -43,7 +47,7 @@
 }
 
 .menu_link a {
-    color: var(--orange);
+    color: var(--orange); 
     text-transform: uppercase;
 }
 
@@ -87,7 +91,7 @@
 
 .footer h2 {
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--orange); 
     font-weight: 600;
 }
 
@@ -142,7 +146,7 @@
 }
 
 .slide_card a {
-    color: var(--orange);
+    color: var(--orange); 
     text-decoration: underline;
 }
 
@@ -419,7 +423,6 @@
         left: 45%;
         width: 265px;
         height: 30px;
-        top: calc(50% + 130px);
 
     }
     100% {
